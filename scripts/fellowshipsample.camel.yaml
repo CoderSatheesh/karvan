@@ -1,0 +1,26 @@
+- route:
+    id: route-8e04
+    from:
+      uri: kamelet:webhook-source
+      id: from-7f71
+      steps:
+        - to:
+            uri: kamelet:jslt-action
+            id: to-86b5
+            parameters:
+              template: file://C:/Users/skchinda/Downloads/TemplateJSLT.txt
+        - log:
+            message: ${body}
+            id: log-701e
+        - filter:
+            id: filter-e285
+            expression:
+              jsonpath:
+                id: jsonpath-9198
+            steps:
+              - to:
+                  uri: azure-key-vault
+                  id: to-3069
+        - to:
+            uri: kamelet:http-secured-sink
+            id: to-9edb
