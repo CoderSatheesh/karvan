@@ -1,0 +1,9 @@
+- route:
+    id: route-b28d
+    from:
+      uri: kamelet:webhook-source
+      id: from-10fc
+      steps:
+        - log:
+            message: ${body}
+            id: log-0f0d
