@@ -4,7 +4,7 @@
       uri: kamelet:webhook-source
       id: from-10fc
       parameters:
-        subpath: wh
+        subpath: /webhook
       steps:
         - log:
             message: ${body}
