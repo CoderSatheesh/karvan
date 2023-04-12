@@ -3,6 +3,8 @@
     from:
       uri: kamelet:webhook-source
       id: from-10fc
+      parameters:
+        subpath: wh
       steps:
         - log:
             message: ${body}
